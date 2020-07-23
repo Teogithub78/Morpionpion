@@ -1,5 +1,5 @@
 require_relative 'board'
-
+require_relative 'game'
   class Player
     attr_accessor :name, :picto
 
@@ -13,6 +13,7 @@ require_relative 'board'
       def recuperer_position_case
           loop do
             position = demander_position_case
+            position = position.map{ |x| x - 1 }
             #position = demander_position_case.map{ |x| x - 1 }
             if position_valide(position)
                 if @board.ajouter_un_picto(position, @picto)
@@ -33,7 +34,7 @@ première ligne 2ème case"
 
       def position_valide(position)
           if position.is_a?(Array) && position.size == 2
-             position = position.map{ |x| x - 1 }
+             #position = position.map{ |x| x - 1 }
             true
           else
               puts "La saisie de la position n'est pas au format attendu !"

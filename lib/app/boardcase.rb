@@ -1,3 +1,4 @@
+=begin
 class BoardCase
 
   attr_accessor :position, :content
@@ -7,3 +8,4 @@ class BoardCase
     @content = content
   end
 end
+=end
